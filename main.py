@@ -322,7 +322,7 @@ def questionToJson(questions: QuestionsData):
         "answer": questions.answer,
     }
 
-app = Flask(__name__)
+app = Flask("Api Application")
 
 @app.route("/allQuestion", methods=["GET"])
 def getAllQuestions():
