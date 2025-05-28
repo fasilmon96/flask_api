@@ -1,5 +1,7 @@
 from  flask  import Flask, jsonify
 
+from waitress import serve
+
 class QuestionsData :
       def __init__(self,question_id,question,option,answer):
         self.question_id = question_id
@@ -332,7 +334,8 @@ def getAllQuestions():
          questionlist.append(questionToJson(questionValue))
      return  jsonify({"questions"  : questionlist})
 
+
 if __name__ == '__main__':
-     app.run(debug=True ,host='0.0.0.0', port=5000)
+    serve(app, host='0.0.0.0', port=5000)
 
 
